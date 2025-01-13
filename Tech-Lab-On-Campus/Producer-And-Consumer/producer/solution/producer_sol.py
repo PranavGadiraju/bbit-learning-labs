@@ -20,6 +20,8 @@ class mqProducer(mqProducerInterface) :
             routing_key=self.routing_key,
             body=message,
             )
+
+    def __del__(self) -> None:
         self.channel.close()
         self.connection.close()
         

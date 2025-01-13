@@ -19,7 +19,7 @@ from solution.consumer_sol import mqConsumer  # pylint: disable=import-error
 
 def main(sector: str, queueName: str) -> None:
     
-    bindingKey = '*.' + sys.argv[1] + '.*'
+    bindingKey = '*.*.' + sys.argv[1]
     
     consumer = mqConsumer(binding_key=bindingKey,exchange_name="Tech Lab Topic Exchange",queue_name=queueName)    
     consumer.startConsuming()

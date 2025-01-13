@@ -26,12 +26,6 @@ def main(ticker: str, price: float, sector: str) -> None:
 
 
     message = "The ticker is: " + ticker + ", the price is: " + price + ", and the sector is: " + sector    
-    mqProducer.channel.basic_publish(
-        exchange='topic_logs', routing_key=routingKey, body=message)
-    print(f" [x] Sent {routingKey}:{message}")
-  
-    
-    
     producer.publishOrder(message)
 
 if __name__ == "__main__":
