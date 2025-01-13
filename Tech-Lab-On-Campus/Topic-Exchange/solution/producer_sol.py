@@ -1,5 +1,6 @@
 import pika
 import os
+import sys
 from producer_interface import mqProducerInterface
 
 class mqProducer(mqProducerInterface) :
@@ -22,5 +23,3 @@ class mqProducer(mqProducerInterface) :
             )
         self.channel.close()
         self.connection.close()
-        
-                
