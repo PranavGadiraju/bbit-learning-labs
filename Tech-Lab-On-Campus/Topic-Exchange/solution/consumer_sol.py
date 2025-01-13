@@ -26,7 +26,7 @@ class mqConsumer(mqConsumerInterface):
         # Bind Binding Key to Queue on the exchange
         self.channel.queue_bind(
             queue= self.queue_name,
-            routing_key= self.binding_key,
+            binding_key= self.binding_key,
             exchange=self.exchange_name,
         )   
         # Set-up Callback function for receiving messages

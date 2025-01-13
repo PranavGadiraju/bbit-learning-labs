@@ -25,7 +25,7 @@ def main(ticker: str, price: float, sector: str) -> None:
     producer = mqProducer(routing_key=routingKey,exchange_name="Tech Lab Topic Exchange")
 
 
-    message = "The ticker is: " + ticker + ", the price is: " + price + ", and the sector is: " + sector    
+    message = "The ticker is: " + ticker + ", the price is: " + price + ", and the sector is: " + sector
     producer.publishOrder(message)
 
 if __name__ == "__main__":
