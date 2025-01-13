@@ -16,8 +16,8 @@ class mqProducer(mqProducerInterface) :
 
     def publishOrder(self, message: str) -> None:
         self.channel.basic_publish(
-            exchange="Exchange Name",
-            routing_key="Routing Key",
+            exchange=self.exchange_name,
+            routing_key=self.routing_key,
             body=message,
             )
         self.channel.close()
